@@ -1,13 +1,21 @@
+#add this in /etc/systemd/system
+# create new service ended in .service
+# run sudo systemctl enable <service>
+# run sudo systemctl start <service>
+# run sudo systemctl stop <service> --> for stop the service
+# run sudo systemctl daemon-restart <service> -->
+#sudo systemctl status opimonitor --> to vew status
+
 [Unit]
 Description=Opi Monitor service
 After=network.target
 
 [Service]
 ExecStart=/home/arraiz/OPIstatus/start.sh
-Restart=always
+#Restart=always
 WorkingDirectory=/home/arraiz/OPIstatus
 User=arraiz
 Group=arraiz
- 
+
 [Install]
 WantedBy=multi-user.target
