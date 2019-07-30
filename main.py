@@ -1,5 +1,5 @@
 from telegram.ext import Updater
-from settings.bot_config import TOKEN_KEY
+from settings.bot_config import TOKEN_KEY,GROUP_ID,USERNAME
 from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler, Filters
 import datetime
@@ -15,7 +15,7 @@ def start(bot, update):
 
 
 def callback_minute(bot, job):
-    bot.send_message(chat_id=-367039844,
+    bot.send_message(chat_id=GROUP_ID,
     text='One message every minute')
 
 job_minute = job.run_daily(callback_minute, t)
