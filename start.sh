@@ -1,0 +1,1 @@
+git clone https://github.com/Arraiz/OPIstatus.git && python3 main.py
