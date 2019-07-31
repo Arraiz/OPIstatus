@@ -22,7 +22,6 @@ def status(bot,update):
         response = "%s\n%s"%(uptime,disk_space)
         bot.send_message(chat_id=update.message.chat_id, text=response)
 
-    
 
 def callback_minute(bot, job):
     bot.send_message(chat_id=GROUP_ID,
@@ -30,9 +29,7 @@ def callback_minute(bot, job):
 
 def main():
     job.run_daily(callback_minute, TIME)
-    start_handler = CommandHandler('start', start)
     status_handler = CommandHandler('status', status)
-    dispatcher.add_handler(start_handler)
     dispatcher.add_handler(status_handler)
     updater.start_polling()
 
