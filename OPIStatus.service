@@ -8,7 +8,7 @@
 
 [Unit]
 Description=Opi Monitor service
-After=network.target
+After=printer.target network.target multi-user.target
 
 [Service]
 ExecStart=/home/arraiz/OPIstatus/start.sh
